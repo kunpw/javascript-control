@@ -60,7 +60,7 @@ browser.pageAction.onClicked.addListener(function(tab) {
         let to_store = {}
         to_store[host] = !whitelist_js
         browser.storage.local.set(to_store).then( function() {
-            browser.tabs.reload()
+            browser.tabs.reload({bypassCache: true})
         })
     })
 })
